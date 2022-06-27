@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 float fc(float F);
 float cf(float C);
