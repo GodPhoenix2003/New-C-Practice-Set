@@ -12,18 +12,15 @@ void main(){
         R=C=c;
     else if(r==c)
         R=C=r;
-    int *a=(int *)malloc(R*C*sizeof(int));
+    int *a=malloc(R*C*sizeof(int));
     for(int i=0;i<R;i++){
         for(int j=0;j<C;j++)
             *(a+i*C+j)=0;
     }
     printf("\nEnter the matrix values:\n");
     for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            int x;
-            scanf("%d", &x);
-            *(a+i*c+j)=x;
-        }
+        for(int j=0;j<c;j++)
+            scanf("%d", &*(a+i*c+j));
     }
     printf("\nOriginal Matrix:-\n");
     for(int i=0;i<R;i++){
@@ -33,7 +30,7 @@ void main(){
         }
         printf("\n");
     }
-    int *b=(int *)malloc(R*C*sizeof(int));
+    int *b=malloc(R*C*sizeof(int));
     for(int i=0;i<R;i++){
         for(int j=0;j<C;j++)
             *(b+j*C+i)=*(a+i*C+j);
